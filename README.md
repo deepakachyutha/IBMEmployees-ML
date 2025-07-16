@@ -5,16 +5,6 @@
 This project uses machine learning to analyze IBM HR employee data and predict employee attrition. The objective is to help businesses understand why employees leave and take preemptive actions.
 
 
-### Tools Used
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-
-
 ### Tasks Performed
 
 1. Data Preprocessing
@@ -55,9 +45,26 @@ Feature Importance Plot: A horizontal bar chart showing most critical factors fo
 - I want to learn and use SHAP/LIME for deeper explaination
 - Handle class imbalance using SMOTE or class_weight
 
+## IMBEmployeeVisu (Data Visualisation)
+
+### Tasks Performed
+
+1. Data Visualisation
+- Plotted a Barh Graph comparing Attrition Rate by Department
+
+## Tools Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+
 ## Dataset 
 IBM HR Analytics Employee Attrition & Performance Dataset
 Source: Kaggle
+
 
 
 ## Dataset License Notice
