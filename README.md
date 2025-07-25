@@ -23,6 +23,11 @@ This project uses machine learning to analyze IBM HR employee data and predict e
 - Extracted feature importance using `RandomForestClassifier`
 - Visualized the Top 15 most influential features on attrition using `RandomForestClassifier` from `sklearn`
 
+5. Class Imbalance Handling:
+- Applied `SMOTE` (Synthetic Minority Over-sampling Technique).
+- Tried Class Weights for imbalanced classification.
+
+
 ### Results
 
 - Top 15 Features by SelectKBest: MonthlyIncome, Overtime, Age, Dailyrate, TotalWorkingYears, MonthlyRate, HourlyRate, etc.
@@ -32,25 +37,27 @@ This project uses machine learning to analyze IBM HR employee data and predict e
 
 Feature Importance Plot: A horizontal bar chart showing most critical factors for attrition.
 
-
-### Things I Learnt
-
-- Data preprocessing & encoding techniques
-- Feature selection using statistical tests
-- Comparison of machine learning models
-- Interpretability using feature importance
-- Evaluation using precision, recall, F1-score
-
-### Future Upgrades
-- I want to learn and use SHAP/LIME for deeper explaination
-- Handle class imbalance using SMOTE or class_weight
-
 ## IMBEmployeeVisu (Data Visualisation)
 
 ### Tasks Performed
 
-1. Data Visualisation
-- Plotted a Barh Graph comparing Attrition Rate by Department
+1. Data Visualisation - Plotted the following graphs 
+- `Attrition Rate by Department`
+- `Attrition by Gender`
+- `Age distribution`
+- `Distance from home`
+- `Monthly Income Distribution`
+
+## IBMEmployeesExplain_PR_Curve
+
+### Tasks Performed 
+
+1. Model Interpretation:
+- SHAP Values to explain individual predictions.
+- Permutation Importance for global feature ranking.
+
+2. Model Evaluation
+Precision-Recall Curve using PrecisionRecallDisplay
 
 ## Tools Used
 
@@ -61,10 +68,20 @@ Feature Importance Plot: A horizontal bar chart showing most critical factors fo
 - Seaborn
 - Scikit-learn
 
+## Things I Learnt
+
+- Data preprocessing & encoding techniques
+- Feature selection using statistical tests
+- Comparison of machine learning models
+- Interpretability using feature importance
+- Evaluation using precision, recall, F1-score
+- Advanced imbalanced data handling with SMOTE and class weights
+- Importance of model interpretation for business decisions
+- How to go beyond just training a model: make it interpretable, relevant, and impactful
+
 ## Dataset 
 IBM HR Analytics Employee Attrition & Performance Dataset
 Source: Kaggle
-
 
 
 ## Dataset License Notice
