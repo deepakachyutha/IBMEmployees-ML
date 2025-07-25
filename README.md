@@ -1,29 +1,28 @@
 # IBMEmployees-ML
 
+A complete ML project using IBM HR employee data to predict employee attrition. The objective is not just about model accuracy but to help businesses understand why employees leave and take actions to save money and retain top talents. 
+
 ## IBMEmployeesModel
-
-This project uses machine learning to analyze IBM HR employee data and predict employee attrition. The objective is to help businesses understand why employees leave and take preemptive actions.
-
 
 ### Tasks Performed
 
-1. Data Preprocessing
+#### 1. Data Preprocessing
 - Cleaning Data by dropping irrelevant columns like: `EmployeeCount`, `Over18`, `StandardHours`
 - Label encoded all categorical variables
 - Exported the cleaned dataset for further use
 
-2. Feature Selection
+#### 2. Feature Selection
 - Used SelectKBest with ANOVA F-test to select the Top 10 Features influencing attrition
 
-3. Model Training & Evaluation
+#### 3. Model Training & Evaluation
 - Trained and evaluated 3 classification models: `Logistic Regression`, `Random Forest Classifier` and `Support Vector Classifier (SVC)`
 - For each model, we calculated: `Accuracy`, `Classification Report` and `Confusion Matrix`
 
-4. Feature Importance
+#### 4. Feature Importance
 - Extracted feature importance using `RandomForestClassifier`
 - Visualized the Top 15 most influential features on attrition using `RandomForestClassifier` from `sklearn`
 
-5. Class Imbalance Handling:
+#### 5. Class Imbalance Handling:
 - Applied `SMOTE` (Synthetic Minority Over-sampling Technique).
 - Tried Class Weights for imbalanced classification.
 
@@ -61,14 +60,15 @@ Precision-Recall Curve using PrecisionRecallDisplay
 
 ## Tools Used
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
+- `Python`
+- `Pandas`
+- `NumPy`
+- `Matplotlib`
+- `Seaborn`
+- `Scikit-learn`
+- `Shap`
 
-## Things I Learnt
+## Things I Learned
 
 - Data preprocessing & encoding techniques
 - Feature selection using statistical tests
@@ -82,7 +82,7 @@ Precision-Recall Curve using PrecisionRecallDisplay
 ## Dataset 
 IBM HR Analytics Employee Attrition & Performance Dataset
 Source: Kaggle
-
+Link: https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
 
 ## Dataset License Notice
 The Titanic dataset used in this project is publicly available for educational use and is provided by platforms like Kaggle.
