@@ -1,64 +1,32 @@
 # IBMEmployees-ML
 
-A complete ML project using IBM HR employee data to predict employee attrition. The objective is not just about model accuracy but to help businesses understand why employees leave and take actions to save money and retain top talents. 
+### Project Overview
 
-## IBMEmployeesModel
+This project presents a comprehensive, data-driven approach to predicting employee attrition using the IBM HR Analytics dataset. The objective was to move beyond a simple accuracy score and build an interpretable model that can provide actionable insights for business leaders. By understanding the key drivers of attrition, organizations can proactively address issues, improve retention, and save significant costs associated with talent loss.
 
-### Tasks Performed
+This repository details the complete end-to-end machine learning pipeline, from initial data exploration and feature engineering to advanced model interpretation.
 
-#### 1. Data Preprocessing
-- Cleaning Data by dropping irrelevant columns like: `EmployeeCount`, `Over18`, `StandardHours`
-- Label encoded all categorical variables
-- Exported the cleaned dataset for further use
+### Key Technical Features
 
-#### 2. Feature Selection
-- Used SelectKBest with ANOVA F-test to select the Top 10 Features influencing attrition
+1.  **Data Preprocessing & Feature Selection:**
+    * Cleaned and preprocessed the dataset by dropping irrelevant columns and performing Label Encoding on all categorical variables to prepare the data for modeling.
+    * Utilized **SelectKBest** with an ANOVA F-test to statistically identify the top 10 most influential features, focusing the model on the most impactful data.
 
-#### 3. Model Training & Evaluation
-- Trained and evaluated 3 classification models: `Logistic Regression`, `Random Forest Classifier` and `Support Vector Classifier (SVC)`
-- For each model, we calculated: `Accuracy`, `Classification Report` and `Confusion Matrix`
+2.  **Handling Class Imbalance:**
+    * Recognized and addressed the significant class imbalance in the dataset (fewer "Yes" attrition cases) by implementing **SMOTE (Synthetic Minority Over-sampling Technique)** and applying **class weights** during model training. This ensures the model learns to effectively predict the minority class, which is crucial for this problem.
 
-#### 4. Feature Importance
-- Extracted feature importance using `RandomForestClassifier`
-- Visualized the Top 15 most influential features on attrition using `RandomForestClassifier` from `sklearn`
+3.  **Model Training & Evaluation:**
+    * Trained and evaluated three different classification models: Logistic Regression, Random Forest Classifier, and Support Vector Classifier (SVC).
+    * The **Random Forest Classifier** was selected as the final model, achieving an accuracy of **~87%**.
+    * Evaluated the model using a **Precision-Recall Curve**, a more robust metric than ROC/AUC for imbalanced datasets.
 
-#### 5. Class Imbalance Handling:
-- Applied `SMOTE` (Synthetic Minority Over-sampling Technique).
-- Tried Class Weights for imbalanced classification.
+4.  **Model Interpretability & Explainable AI (XAI):**
+    * To ensure the model's predictions were transparent and actionable, two powerful interpretation techniques were used:
+        * **SHAP (SHapley Additive exPlanations):** Analyzed SHAP values to understand the impact of each feature on individual predictions, explaining *why* a specific employee was flagged as a flight risk.
+        *  **Permutation Importance:** Assessed the global importance of each feature by measuring how model performance changes when a feature is shuffled, providing a clear ranking of attrition drivers.
 
 
-### Results
-
-- Top 15 Features by SelectKBest: MonthlyIncome, Overtime, Age, Dailyrate, TotalWorkingYears, MonthlyRate, HourlyRate, etc.
-- Random Forest Accuracy: ~87.0748% 
-- Logistic Regrssion Accuracy: ~87.0748%
-- SVC Accuracy: ~86.7346%
-
-Feature Importance Plot: A horizontal bar chart showing most critical factors for attrition.
-
-## IMBEmployeeVisu (Data Visualisation)
-
-### Tasks Performed
-
-1. Data Visualisation - Plotted the following graphs 
-- `Attrition Rate by Department`
-- `Attrition by Gender`
-- `Age distribution`
-- `Distance from home`
-- `Monthly Income Distribution`
-
-## IBMEmployeesExplain_PR_Curve
-
-### Tasks Performed 
-
-1. Model Interpretation:
-- SHAP Values to explain individual predictions.
-- Permutation Importance for global feature ranking.
-
-2. Model Evaluation
-Precision-Recall Curve using PrecisionRecallDisplay
-
-## Tools Used
+## Technologies Used
 
 - `Python`
 - `Pandas`
@@ -67,18 +35,21 @@ Precision-Recall Curve using PrecisionRecallDisplay
 - `Seaborn`
 - `Scikit-learn`
 - `Shap`
+- `Imblearn (for SMOTE)`
 
-## Things I Learned
+### Results & Key Findings
 
-- Data preprocessing & encoding techniques
-- Feature selection using statistical tests
-- Comparison of machine learning models
-- Interpretability using feature importance
-- Evaluation using precision, recall, F1-score
-- Advanced imbalanced data handling with SMOTE and class weights
-- Importance of model interpretation for business decisions
-- How to go beyond just training a model: make it interpretable, relevant, and impactful
+The final Random Forest model achieved a strong predictive accuracy and provided clear, actionable insights.
 
+* **Model Performance:**
+    * **Accuracy:** The model achieved an accuracy of **~87%** on the test set.
+    * **Evaluation:** A Precision-Recall Curve was used to evaluate performance, which is a more robust metric for imbalanced datasets.
+
+* **Key Drivers of Attrition:**
+    * The model's feature importance analysis revealed that factors like **OverTime, MonthlyIncome, and TotalWorkingYears** were among the most significant predictors of employee attrition.
+
+
+---
 ## Dataset 
 IBM HR Analytics Employee Attrition & Performance Dataset
 Source: Kaggle
@@ -87,4 +58,5 @@ Link: https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-d
 ## Dataset License Notice
 The Titanic dataset used in this project is publicly available for educational use and is provided by platforms like Kaggle.
 
+---
 *Created by Deepak Battula*
